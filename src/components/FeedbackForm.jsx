@@ -40,14 +40,16 @@ const FeedbackForm = () => {
         const newFeedback = {
             text,
             rating
-        }
-
+        } 
         if(editFeedbackStata.edit === true){
+        
             updateFeedback(editFeedbackStata.item.id, newFeedback)
         } else {
             addHandle(newFeedback)
         }
     }
+    setDisable(true);
+    setRating(8)
     setText('')
    }
 

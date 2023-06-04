@@ -9,11 +9,13 @@ export const FeedbackProvider = ({children})=>{
     const [editFeedbackStata, setEditFeedbackStata] = useState({item: {}, edit: false});
 
     const updateFeedback = (id, uptItem)=>{
-      setFeedback(feedback.map(item=> item.id === id ? {...item, uptItem} : {...item}))
+    
+      setFeedback(feedback.map(item=> item.id === id ? {...item, text:uptItem.text, rating: uptItem.rating} : {...item}))
     
   }
 
     const addHandle = (newFeedback)=>{
+      console.log('entro new',editFeedbackStata)
             newFeedback.id = uuidv4();
             setFeedback([newFeedback, ...feedback]);
         
